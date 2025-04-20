@@ -5,7 +5,6 @@ This is a personal homepage built with **React**, **TypeScript**, and **Vite**. 
 ## Features
 
 - **Home Page**: Displays a profile section with clickable names and social media links.
-- **Blog Page**: A placeholder for blog posts with a "coming soon" message.
 - **Links Page**: A collection of links displayed as cards with titles, subtitles, and avatars.
 - **Dark/Light Theme Toggle**: Automatically detects system preferences and allows manual switching.
 - **Responsive Design**: Optimized for desktop and mobile devices.
