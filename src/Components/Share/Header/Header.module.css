@@ -1,0 +1,120 @@
+.nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    justify-items: center;
+    /* background-color: var(--color-common-accent-stroke); */
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--color-accent);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav_wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: calc(100vw - 80px);
+    justify-content: space-between;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+.nav_logo {
+    font-family: var(--font-family-main);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium);
+    transition: all 0.3s ease;
+}
+
+
+.nav_itemsList {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav_item {
+    font-size: var(--font-size-main);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav_item:hover,
+.nav_item.active,
+.nav_logo:hover {
+    color: var(--color-accent-hover);
+    transform: scale(1.1);
+}
+
+.nav_toggle:hover {
+    transform: rotate(16deg) scale(1.5);
+    font-weight: var(--font-weight-bold);
+}
+
+.nav_toggle {
+    font-size: var(--font-size-medium);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.nav_item:active,
+.nav_toggle:active,
+.nav_logo:active {
+    color: var(--color-accent-hover);
+    transform: scale(0.8);
+}
+
+@media (max-width: 768px) {
+    .nav_logo {
+        display: none;
+    }
+
+    .nav_wrapper {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        align-content: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav_logo {
+        display: none;
+    }
+
+    .nav_wrapper {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .nav_itemsList {
+        gap: 20px;
+    }
+}

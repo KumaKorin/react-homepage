@@ -1,0 +1,117 @@
+@import url('https://fonts.loli.net/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+
+    --color-theme-main: hsl(5.32, 100%, 69.02%);
+    --color-theme-main-600: hsl(5, 44%, 42%);
+
+    /* 亮色模式颜色变量 */
+    --color-light-bg: hsl(0, 0%, 94%);
+    --color-light-bg-card: hsl(0, 0%, 100%);
+    --color-light-text-primary: hsl(0, 0%, 20%);
+    --color-light-text-secondary: hsl(0, 0%, 27%);
+    --color-light-accent: hsla(0, 70%, 80%, 0.1);
+    --color-light-accent-stroke: hsla(0, 70%, 80%, 0.3);
+    --color-light-accent-solid: hsl(0, 70%, 80%);
+    --color-light-accent-hover: hsl(5.22, 68.05%, 66.86%);
+    --color-light-accent-title: hsl(5.22, 68.05%, 66.86%);
+
+
+    /* 暗色模式颜色变量 */
+    --color-dark-bg: hsl(0, 0%, 14%);
+    --color-dark-bg-card: hsl(0, 0%, 18.04%);
+    --color-dark-text-primary: hsl(0, 0%, 92%);
+    --color-dark-text-secondary: hsl(0, 0%, 87%);
+    --color-dark-accent: hsla(0, 40%, 60%, 0.1);
+    --color-dark-accent-stroke: hsla(0, 40%, 60%, 0.3);
+    --color-dark-accent-solid: hsl(0, 40%, 60%);
+    --color-dark-accent-hover: hsl(9.57, 100%, 81.57%);
+    --color-dark-accent-title: hsl(5.22, 68.05%, 66.86%);
+
+
+    /* 通用颜色 */
+    --color-common-accent-stroke: hsla(0, 40%, 60%, 0.3);
+    --color-common-title: hsl(5.22, 68.05%, 66.86%);
+
+    /* 字体变量 */
+    --font-family-main: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", "Arial", sans-serif;
+    --font-family-mono: "Roboto Mono", "Courier New", "Courier", monospace;
+    --font-size-page-title: 58px;
+    --font-size-large: 32px;
+    --font-size-medium: 24px;
+    --font-size-main: 16px;
+    --font-size-small: 14px;
+
+    --font-weight-havey: 700;
+    --font-weight-bold: 600;
+    --font-weight-normal: 400;
+    --font-weight-light: 300;
+    --font-weight-thin: 200;
+}
+
+body.light {
+    --color-bg: var(--color-light-bg);
+    --color-bg-card: var(--color-light-bg-card);
+    --color-text-primary: var(--color-light-text-primary);
+    --color-text-secondary: var(--color-light-text-secondary);
+    --color-accent: var(--color-light-accent);
+    --color-accent-stroke: var(--color-light-accent-stroke);
+    --color-accent-solid: var(--color-light-accent-solid);
+    --color-accent-hover: var(--color-light-accent-hover);
+    --color-accent-title: var(--color-light-accent-title);
+
+    --color-theme-shadow: var(--color-theme-main-600);
+}
+
+body.dark {
+    --color-bg: var(--color-dark-bg);
+    --color-bg-card: var(--color-dark-bg-card);
+    --color-text-primary: var(--color-dark-text-primary);
+    --color-text-secondary: var(--color-dark-text-secondary);
+    --color-accent: var(--color-dark-accent);
+    --color-accent-stroke: var(--color-dark-accent-stroke);
+    --color-accent-solid: var(--color-dark-accent-solid);
+    --color-accent-hover: var(--color-dark-accent-hover);
+    --color-accent-title: var(--color-dark-accent-title);
+
+    --color-theme-shadow: var(--color-theme-main);
+
+}
+
+body.loading {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-main);
+    background-color: var(--color-bg);
+    transition: all 0.3s ease-in-out;
+}
+
+main {
+    position: relative;
+}
+
+body {
+    overflow-y: scroll;
+    /* 始终显示滚动条，避免布局跳动 */
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* 滚动条宽度 */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+    /* 滚动条轨道背景 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    /* 滚动条颜色 */
+    border-radius: 4px;
+    /* 圆角 */
+}

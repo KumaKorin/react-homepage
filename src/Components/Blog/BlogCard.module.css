@@ -1,0 +1,75 @@
+.blog_card_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.blog_card_container {
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    background-color: var(--color-bg-card);
+    max-width: 960px;
+    width: calc(100vw - 80px);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.blog_card_title {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-common-title);
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    transform-origin: center left;
+}
+
+.blog_card_description {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    margin-bottom: 0px;
+    transition: all 0.3s ease;
+}
+
+.blog_card_info {
+    display: flex;
+    justify-items: space-between;
+    align-items: center;
+}
+
+.blog_card_link,
+.blog_card_date {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.blog_card_link svg,
+.blog_card_link svg {
+    vertical-align: middle;
+    font-size: var(--font-size-small);
+
+}
+
+.blog_card_link {
+    margin-left: auto;
+}
+
+.blog_card_title:hover,
+.blog_card_link:hover {
+    color: var(--color-accent-hover);
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+
+    .blog_card_wapper,
+    .blog_card_container {
+        border-radius: 0px;
+    }
+}

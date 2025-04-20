@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "allowJs": true, // 允许导入 JavaScript 文件
+    "checkJs": false, // 不对 JavaScript 文件进行类型检查
+    "moduleResolution": "node", // 确保模块解析正常
+    "esModuleInterop": true // 允许默认导入和命名导入
+  }
+}
