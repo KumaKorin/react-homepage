@@ -1,6 +1,6 @@
 import BlogCard from "./BlogCard"
 import style from "./Blog.module.css"
-import Background from "../Share/Background/Background"
+import Background from "../Common/Background/Background"
 
 const Blog = () => {
     return (

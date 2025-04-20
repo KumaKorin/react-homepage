@@ -1,4 +1,4 @@
-import Background from '../Share/Background/Background'
+import Background from '../Common/Background/Background'
 import style from './Links.module.css'
 import LinksCard from './LinksCard'
 

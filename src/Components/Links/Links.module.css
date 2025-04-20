@@ -37,7 +37,7 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
 }
 
 @media (max-width: 1024px) {
