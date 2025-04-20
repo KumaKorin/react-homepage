@@ -19,6 +19,10 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
+.nav_title {
+    transition: all 0.3s ease;
+}
+
 .nav_wrapper {
     display: flex;
     max-width: 1200px;
@@ -56,6 +60,7 @@ nav.scrolled {
 
 .nav_item:hover,
 .nav_item.active,
+.nav_title:hover,
 .nav_logo:hover {
     color: var(--color-accent-hover);
     transform: scale(1.1);
@@ -82,9 +87,10 @@ nav.scrolled {
 
 .nav_item:active,
 .nav_toggle:active,
-.nav_logo:active {
+.nav_title:active,
+.nav_logo:hover {
     color: var(--color-accent-hover);
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 @media (max-width: 768px) {

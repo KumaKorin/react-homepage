@@ -40,6 +40,7 @@
 @media (max-width: 1024px) {
     .background_text_wrapper {
         max-width: 100%;
+        overflow: hidden;
     }
 
     .background_bg_top {
