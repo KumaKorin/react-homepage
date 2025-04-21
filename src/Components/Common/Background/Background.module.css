@@ -31,9 +31,8 @@
 
 .background_bg_bottom {
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
     right: 10%;
-    ;
     transition: all 0.3s ease;
 }
 

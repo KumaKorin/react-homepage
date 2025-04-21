@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AiFillSun, AiFillMoon, AiFillHome } from "react-icons/ai";
+import { AiFillSun, AiFillMoon, AiFillHome, AiFillMessage } from "react-icons/ai";
 import { MdArticle } from "react-icons/md";
 import { FaLink } from "react-icons/fa";
 
@@ -70,6 +70,7 @@ const Header: React.FC = () => {
         <div className={style.nav_itemsList}>
           <Link className={`${style.nav_item} ${currentPath === '/' ? style.active : ''}`} to='/'><AiFillHome /> Home</Link>
           <Link className={`${style.nav_item} ${currentPath === '/blog' ? style.active : ''}`} to='/blog'><MdArticle /> Blog</Link>
+          <Link className={`${style.nav_item} ${currentPath === '/state' ? style.active : ''}`} to='/state'><AiFillMessage /> State</Link>
           <Link className={`${style.nav_item} ${currentPath === '/links' ? style.active : ''}`} to='/links'><FaLink /> Links</Link>
           <button className={`${style.nav_item} ${style.nav_toggle}`} ref={themeToggle} onClick={handleThemeToggle}>
             {theme === 'light' ? <AiFillMoon /> : <AiFillSun />}

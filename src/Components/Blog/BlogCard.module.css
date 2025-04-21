@@ -11,7 +11,6 @@
     background-color: var(--color-bg-card);
     max-width: 960px;
     width: calc(100vw - 80px);
-    margin-bottom: 2rem;
     transition: all 0.3s ease;
 }
 

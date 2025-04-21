@@ -1,6 +1,6 @@
 import { FaBilibili, FaYoutube } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaTelegram } from "react-icons/fa";
 import { useRef, useState } from "react";
 
 import style from './Profile.module.css'
@@ -37,11 +37,12 @@ const Profile = () => {
                         <a href="https://github.com/KumaKorin" target="blank" className={style.profile_social_item}><FaGithub /></a>
                         <a href="https://www.youtube.com/@KumaKorin" target="blank" className={style.profile_social_item}><FaYoutube /></a>
                         <a href="https://space.bilibili.com/37078929" target="blank" className={style.profile_social_item}><FaBilibili /></a>
+                        <a href="https://t.me/KumaKorin" target="blank" className={style.profile_social_item}><FaTelegram /></a>
                         <a href="mailto:kumakorin@duck.com" target="blank" className={style.profile_social_item}><MdEmail /></a>
                     </div>
                 </div>
             </div>
-            <p className={style.profile_background}>{`<PROFILE>`}</p>
+            <p className={style.profile_background}>{`<PROFILE/>`}</p>
         </div>
     )
 }

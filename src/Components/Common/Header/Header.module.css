@@ -105,6 +105,10 @@ nav.scrolled {
         align-content: center;
         justify-content: center;
     }
+
+    .nav_itemsList {
+        gap: 30px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -122,5 +126,36 @@ nav.scrolled {
 
     .nav_itemsList {
         gap: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav_logo {
+        display: none;
+    }
+
+    .nav_wrapper {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .nav_itemsList {
+        gap: 10px;
+    }
+
+    .nav_item {
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text-primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .nav_toggle {
+        font-size: var(--font-size-medium);
+
     }
 }

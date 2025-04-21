@@ -4,64 +4,21 @@ import LinksCard from './LinksCard'
 
 const links = [
     {
-        "title": "KumaKorin",
-        "subtitle": "熊可狸",
-        "link": "https://korin.im",
-        "avatar": "https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg"
+        "title": "纸绫",
+        "subtitle": "MoriDreamers",
+        "link": "https://www.moridreamers.com/?from=korin.im",
+        "avatar": "https://cravatar.com/avatar/2b826c131afe46c2166d3acf46862b35?s=512"
     },
     {
-        "title": "Another Friend",
-        "subtitle": "另一个朋友",
-        "link": "https://another-example.com",
-        "avatar": "https://picsum.photos/200?2"
+        "title": "Aira",
+        "subtitle": "艾了个拉",
+        "link": "https://aira.cafe/?from=korin.im",
+        "avatar": "https://cravatar.com/avatar/588a9fd8fde139d73aaeb95dd19b6827?s=512"
     },
     {
-        "title": "Tech Blog",
-        "subtitle": "技术博客",
-        "link": "https://techblog.com",
-        "avatar": "https://picsum.photos/200?3"
-    },
-    {
-        "title": "Design Hub",
-        "subtitle": "设计中心",
-        "link": "https://designhub.com",
-        "avatar": "https://picsum.photos/200?4"
-    },
-    {
-        "title": "Travel Diaries",
-        "subtitle": "旅行日记",
-        "link": "https://traveldiaries.com",
-        "avatar": "https://picsum.photos/200?5"
-    },
-    {
-        "title": "Food Lover",
-        "subtitle": "美食爱好者",
-        "link": "https://foodlover.com",
-        "avatar": "https://picsum.photos/200?6"
-    },
-    {
-        "title": "Code Master",
-        "subtitle": "代码大师",
-        "link": "https://codemaster.com",
-        "avatar": "https://picsum.photos/200?7"
-    },
-    {
-        "title": "Nature Explorer",
-        "subtitle": "自然探索者",
-        "link": "https://natureexplorer.com",
-        "avatar": "https://picsum.photos/200?8"
-    },
-    {
-        "title": "Art Studio",
-        "subtitle": "艺术工作室",
-        "link": "https://artstudio.com",
-        "avatar": "https://picsum.photos/200?9"
-    },
-    {
-        "title": "Fitness Guru",
-        "subtitle": "健身达人",
-        "link": "https://fitnessguru.com",
-        "avatar": "https://picsum.photos/200?10"
+        "title": "Akuta Zehy",
+        "link": "https://akutazehy.github.io/?from=korin.im",
+        "avatar": "https://cravatar.com/avatar/54e2d9927b6a0b0bbce12bd4df8a913ae364f4de3b428e7a5cb1bddcec37ffb4?s=512"
     }
 ]
 
@@ -72,19 +29,21 @@ const Links = () => {
                 <div className={style.links_container}>
                     <h1 className={style.links_title}>友链</h1>
                     <div className={style.links_card_wrapper}>
-                        {
-                            links.map((item, index) => {
-                                return (
-                                    <LinksCard
-                                        key={index}
-                                        title={item.title}
-                                        subtitle={item.subtitle}
-                                        link={item.link}
-                                        avatar={item.avatar}
-                                    />
-                                )
-                            })
-                        }
+                        <div className={style.links_card_container}>
+                            {
+                                links.map((item, index) => {
+                                    return (
+                                        <LinksCard
+                                            key={index}
+                                            title={item.title}
+                                            subtitle={item.subtitle}
+                                            link={item.link}
+                                            avatar={item.avatar}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

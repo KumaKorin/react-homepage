@@ -3,6 +3,7 @@ import Layout from "../Components/Layout/Layout";
 import HomePage from "../Pages/Home";
 import BlogPage from "../Pages/Blog";
 import LinksPage from "../Pages/Links";
+import NotFoundPage from "../Pages/NotFound";
 
 const appRouter = createBrowserRouter([
     {
@@ -12,6 +13,7 @@ const appRouter = createBrowserRouter([
             { path: '/', element: <HomePage /> },
             { path: '/blog', element: <BlogPage /> },
             { path: '/links', element: <LinksPage /> },
+            { path: '*', element: <NotFoundPage /> }
         ],
     },
 ]);
