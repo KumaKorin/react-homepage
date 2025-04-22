@@ -74,6 +74,7 @@
         top: 40px;
         left: 50%;
         transform: translate(-50%, -50%);
+        animation: none;
     }
 
     .background_bg_bottom {
@@ -87,6 +88,7 @@
         top: 40px;
         left: 50%;
         transform: translate(-50%, -50%);
+        animation: none;
     }
 
     .background_bg_bottom {
