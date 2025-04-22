@@ -6,12 +6,26 @@
 }
 
 .blog_card_container {
+    opacity: 0;
     padding: 1rem 2.5rem;
     border-radius: 8px;
     background-color: var(--color-bg-card);
     max-width: 960px;
     width: calc(100vw - 80px);
     transition: all 0.3s ease;
+    animation: blog_card_fadeIn 0.5s ease forwards;
+}
+
+@keyframes blog_card_fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .blog_card_title {

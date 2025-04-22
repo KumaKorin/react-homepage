@@ -1,0 +1,23 @@
+{
+    "Pages": {
+        "Blog": "博客",
+        "State": "状态",
+        "Links": "友链"
+    },
+    "Error": {
+        "404": "404 页面未找到",
+        "Back": "返回主页"
+    },
+    "Status": {
+        "Loading": "正在加载...",
+        "Error": "啊哦，出错了 :("
+    },
+    "Controller": {
+        "Pagination": {
+            "First": "首页",
+            "Previous": "上一页",
+            "Next": "下一页",
+            "End": "末页"
+        }
+    }
+}

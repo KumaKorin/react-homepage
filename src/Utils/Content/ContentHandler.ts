@@ -1,0 +1,1 @@
+/* 懒得写了 先用着Contentful吧，等支持 Strapi 的时候再写了 */

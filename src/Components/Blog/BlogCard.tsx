@@ -9,18 +9,27 @@ interface BlogCardProps {
     articleTitle: string;
     articleDescription: string;
     articleDate?: string;
+    cardStyle?: React.CSSProperties;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ articleId, articleTitle, articleDescription, articleDate }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ articleId, articleTitle, articleDescription, articleDate, cardStyle }) => {
+
+    const formattedDate = articleDate
+        ? new Date(articleDate).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        })
+        : "Unknown Date";
+
     return (
         <div className={style.blog_card_wrapper}>
-            <div className={style.blog_card_container}>
-                <h1 className={style.blog_card_title}>{articleTitle}</h1>
+            <div className={style.blog_card_container} style={cardStyle}>
+                <Link className={style.blog_card_link} to={`/blog/${articleId}`}><h1 className={style.blog_card_title}>{articleTitle}</h1></Link>
                 <p className={style.blog_card_description}>{articleDescription}</p>
                 <div className={style.blog_card_info}>
-                    <p className={style.blog_card_date}><AiFillCalendar /> {articleDate} </p>
-                    <Link className={style.blog_card_link} target="_blank" to={articleId} >Read More <FaAngleRight /></Link>
-                    {/* <Link className={style.blog_card_link} to={`/blog/${articleId}`} >Read More <FaAngleRight /></Link> */}
+                    <p className={style.blog_card_date}><AiFillCalendar /> {formattedDate} </p>
+                    <Link className={style.blog_card_link} to={`/blog/${articleId}`} >Read More <FaAngleRight /></Link>
                 </div>
             </div>
         </div>

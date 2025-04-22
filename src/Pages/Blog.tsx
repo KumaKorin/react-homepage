@@ -1,11 +1,9 @@
-import Blog from "../Components/Blog/Blog"
+import Blog from "../Components/Blog/Blog";
 
 const BlogPage = () => {
     return (
-        <>
-            <Blog />
-        </>
-    )
-}
+        <Blog />
+    );
+};
 
-export default BlogPage
+export default BlogPage;

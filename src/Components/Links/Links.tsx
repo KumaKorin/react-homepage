@@ -27,7 +27,7 @@ const Links = () => {
         <>
             <div className={style.links_wrapper}>
                 <div className={style.links_container}>
-                    <h1 className={style.links_title}>友链</h1>
+                    <h1 className={style.links_title}>Friends</h1>
                     <div className={style.links_card_wrapper}>
                         <div className={style.links_card_container}>
                             {

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    width: 100%;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -16,9 +16,8 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    min-width: 0;
+    min-width: 320px;
     width: 100%;
-    padding: 0 40px;
     margin-top: calc(80px * 1);
     margin-bottom: 16rem;
     position: relative;
@@ -34,19 +33,68 @@
     margin-bottom: 2rem;
 }
 
-.blog_comingsoon {
+
+.blog_tip_loading {
     font-family: var(--font-family-main);
-    font-size: calc(var(--font-size-page-title) - 40px);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-text-secondary);
+    font-size: var(--font-size-medium);
+    color: var(--color-accent-title);
     text-align: center;
-    margin-bottom: 4rem;
+    margin-right: 7px;
+    margin-top: 2rem;
+    animation: loading 0.5s ease infinite;
+    transition: all 0.3s ease-in-out;
 }
 
-.blog_comingsoon a {
-    text-decoration: none;
-    color: var(--color-accent-title);
+.blog_tip_error {
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-medium);
+    color: var(--color-theme-main-600);
+    margin-top: 2rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
 }
+
+.blog_tip_error_details {
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-small);
+    color: var(--color-theme-main-600);
+    margin-top: 2rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 @media (max-width: 1024px) {
     .blog_container {

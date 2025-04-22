@@ -1,0 +1,23 @@
+{
+    "Pages": {
+        "Blog": "Blog",
+        "State": "State",
+        "Links": "Partner Links"
+    },
+    "Error": {
+        "404": "404 Not Found",
+        "Back": "Back To Home"
+    },
+    "Status": {
+        "Loading": "Now Loading ...",
+        "Error": "Something went wrong :("
+    },
+    "Controller": {
+        "Pagination": {
+            "First": "First",
+            "Previous": "Prev",
+            "Next": "Next",
+            "End": "End"
+        }
+    }
+}
