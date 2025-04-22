@@ -25,7 +25,7 @@ interface getPostsContentShape {
     title: string,
     content: Document,
     publishedTime: string,
-    isPinned: boolean
+    isPinned?: boolean
 }
 
 const BlogPost = () => {
@@ -38,7 +38,7 @@ const BlogPost = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await getPostsContent("Blog", slug || " ");
+                const res = await getPostsContent(slug || " ");
                 setArticleContent(res);
                 console.log(res.content);
                 setStatus("Done");

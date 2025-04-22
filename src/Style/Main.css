@@ -1,5 +1,4 @@
 @import url('https://fonts.loli.net/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/font-pingfang-sc@1.0.5/index.min.css');
 
 :root {
 
@@ -40,10 +39,10 @@
 
     /* 通用颜色 */
     --color-common-accent-stroke: hsla(0, 40%, 60%, 0.3);
-    --color-common-title: hsl(5.22, 68.05%, 66.86%);
+    --color-common-title: hsl(5, 51%, 67%);
 
     /* 字体变量 */
-    --font-family-main: "PingFang SC", "PingFangSC-Semibold", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei", sans-serif;
+    --font-family-main: "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei", sans-serif;
     --font-family-mono: "Roboto Mono", "Courier New", "Courier", monospace;
     --font-size-page-title: 58px;
     --font-size-large: 32px;

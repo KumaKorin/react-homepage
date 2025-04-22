@@ -1,5 +1,7 @@
 # React Personal Home Page
 
+[使用方法](./doc/中文.md)
+
 ## Installation
 1. Clone the repository:
 ```bash

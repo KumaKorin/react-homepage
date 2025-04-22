@@ -10,7 +10,7 @@ interface PostsListShape {
     description: string;
     slug: string;
     publishedTime: string;
-    isPinned: boolean;
+    isPinned?: boolean;
 }
 
 const Blog: React.FC = () => {
@@ -26,7 +26,7 @@ const Blog: React.FC = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await getPostsList("Blog", currentPage - 1);
+                const res = await getPostsList(currentPage - 1);
                 setTotalItems(res.total);
                 setPosts(res.items);
                 setStatus("Done");

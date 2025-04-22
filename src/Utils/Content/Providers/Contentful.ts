@@ -2,9 +2,19 @@ import { createClient } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
 
 // 配置 dotenv
-const modelPrefix = import.meta.env.VITE_CONTENTFUL_MODEL_PREFIX || '';
+const blogModel = import.meta.env.VITE_CONTENTFUL_BLOG_MODEL || '';
 const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
-type selectShape = ("fields.blogTitle" | "fields.blogDescription" | "fields.blogSlug" | "fields.publishedTime" | "fields.isPinned" | "fields.blogContent")[];
+
+// 修改 selectShape 类型，支持 sys.createdAt
+type selectShape = (
+    | "fields.blogTitle"
+    | "fields.blogDescription"
+    | "fields.blogSlug"
+    | "fields.publishedTime"
+    | "fields.isPinned"
+    | "fields.blogContent"
+    | "sys.createdAt"
+)[];
 
 // 创建 Contentful 客户端
 const client = createClient({
@@ -13,11 +23,12 @@ const client = createClient({
 });
 
 // 获取置顶文章
-export const getPinnedPosts = async (model: string) => {
-    const orderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || '-fields.publishedTime';
+export const getPinnedPosts = async () => {
+    // 默认值修改为 -sys.createdAt
+    const orderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || '-sys.createdAt';
     const res = await client.getEntries({
-        content_type: `${modelPrefix}${model}`,
-        order: orderType,
+        content_type: blogModel,
+        order: [orderType],
     });
     return res.items.map((item) => item.fields);
 }
@@ -29,25 +40,32 @@ interface getPostsListShape {
         description: string;
         slug: string;
         publishedTime: string;
-        isPinned: boolean;
+        isPinned?: boolean;
     }[];
     total: number;
 }
 
-export const getPostsList = async (model: string, offset: number): Promise<getPostsListShape> => {
-    const orderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || '-fields.publishedTime';
+export const getPostsList = async (offset: number): Promise<getPostsListShape> => {
+
+    const rawOrderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || 'createdAt';
+    const orderType = rawOrderType === 'createdAt' ? '-sys.createdAt' : '-fields.publishedTime';
+
     const selectedFields: selectShape = [
         'fields.blogTitle',
         'fields.blogDescription',
         'fields.blogSlug',
-        'fields.publishedTime',
+        rawOrderType === 'createdAt' ? 'sys.createdAt' : 'fields.publishedTime',
         'fields.isPinned',
     ];
+
+    const validOffset = Number.isFinite(offset) ? offset : 0;
+    const validItemsLimit = Number.isFinite(itemsLimit) ? itemsLimit : 10;
+
     const res = await client.getEntries({
-        content_type: `${modelPrefix}${model}`,
-        order: orderType,
-        limit: itemsLimit,
-        skip: offset * itemsLimit,
+        content_type: blogModel,
+        order: [orderType], // 将字符串包装为数组
+        limit: validItemsLimit,
+        skip: validOffset * validItemsLimit,
         select: selectedFields,
     });
 
@@ -56,26 +74,26 @@ export const getPostsList = async (model: string, offset: number): Promise<getPo
             title: typeof item.fields.blogTitle === 'string' ? item.fields.blogTitle : '',
             description: typeof item.fields.blogDescription === 'string' ? item.fields.blogDescription : '',
             slug: typeof item.fields.blogSlug === 'string' ? item.fields.blogSlug : '',
-            publishedTime: typeof item.fields.publishedTime === 'string' ? item.fields.publishedTime : '',
+            publishedTime: rawOrderType === 'createdAt' ? item.sys.createdAt.toString() : item.fields.publishedTime!.toString(),
+
             isPinned: typeof item.fields.isPinned === 'boolean' ? item.fields.isPinned : false,
         })),
         total: res.total,
     };
 };
 
-
 // 获取文章内容
 interface getPostsContentShape {
-    title: string,
-    content: Document,
-    publishedTime: string,
-    isPinned: boolean
+    title: string;
+    content: Document;
+    publishedTime: string;
+    isPinned?: boolean;
 }
 
-export const getPostsContent = async (model: string, slug: string): Promise<getPostsContentShape> => {
+export const getPostsContent = async (slug: string): Promise<getPostsContentShape> => {
 
     const res = await client.getEntries({
-        content_type: `${modelPrefix}${model}`,
+        content_type: blogModel,
         'fields.blogSlug': slug,
         limit: 1,
     });
@@ -89,7 +107,11 @@ export const getPostsContent = async (model: string, slug: string): Promise<getP
     return {
         title: typeof item.fields.blogTitle === 'string' ? item.fields.blogTitle : '',
         content: item.fields.blogContent as Document,
-        publishedTime: typeof item.fields.publishedTime === 'string' ? item.fields.publishedTime : '',
+        publishedTime: typeof item.fields.publishedTime === 'string'
+            ? item.fields.publishedTime
+            : typeof item.fields.publishedTime === 'number'
+                ? item.fields.publishedTime.toString()
+                : '',
         isPinned: typeof item.fields.isPinned === 'boolean' ? item.fields.isPinned : false,
     };
 };

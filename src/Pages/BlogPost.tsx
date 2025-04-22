@@ -2,7 +2,9 @@ import BlogPost from "../Components/Blog/BlogPost";
 
 const BlogPostPage = () => {
     return (
-        <BlogPost />
+        <>
+            <BlogPost />
+        </>
     )
 }
 
