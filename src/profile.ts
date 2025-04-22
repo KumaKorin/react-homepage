@@ -1,4 +1,5 @@
 export const profile = {
+    sitename: "KumaKorin",
     names: ["KumaKorin", "熊こりん", "熊可狸", "阿狸丶A"],
     description: "My existence is a perpetual miracle to me.",
     image: "https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg",
@@ -10,3 +11,23 @@ export const profile = {
         email: "mailto:kumakorin@duck.com"
     }
 };
+
+export const links = [
+    {
+        title: "纸绫",
+        subtitle: "MoriDreamers",
+        link: "https://www.moridreamers.com/?from=korin.im",
+        avatar: "https://cravatar.com/avatar/2b826c131afe46c2166d3acf46862b35?s=512"
+    },
+    {
+        title: "Aira",
+        subtitle: "艾了个拉",
+        link: "https://aira.cafe/?from=korin.im",
+        avatar: "https://cravatar.com/avatar/588a9fd8fde139d73aaeb95dd19b6827?s=512"
+    },
+    {
+        title: "Akuta Zehy",
+        link: "https://akutazehy.github.io/?from=korin.im",
+        avatar: "https://cravatar.com/avatar/54e2d9927b6a0b0bbce12bd4df8a913ae364f4de3b428e7a5cb1bddcec37ffb4?s=512"
+    }
+];

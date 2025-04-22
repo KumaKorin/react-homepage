@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AiFillSun, AiFillMoon, AiFillHome, AiFillMessage } from "react-icons/ai";
 import { MdArticle } from "react-icons/md";
 import { FaLink } from "react-icons/fa";
+import { profile } from "../../../profile"
 
 import style from './Header.module.css';
 
@@ -65,7 +66,7 @@ const Header: React.FC = () => {
     <nav className={`${style.nav} ${isScrolled ? style.scrolled : ''}`}>
       <div className={style.nav_wrapper}>
         <div className={style.nav_title}>
-          <Link className={style.nav_logo} to="/">KumaKorin</Link>
+          <Link className={style.nav_logo} to="/">{profile.sitename}</Link>
         </div>
         <div className={style.nav_itemsList}>
           <Link className={`${style.nav_item} ${currentPath === '/' ? style.active : ''}`} to='/'><AiFillHome /> Home</Link>
