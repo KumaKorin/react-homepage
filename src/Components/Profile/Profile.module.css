@@ -135,6 +135,19 @@
     opacity: 0.4;
     z-index: -1;
     user-select: none;
+    animation: backgroundAnimation 0.5s ease-in-out;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {

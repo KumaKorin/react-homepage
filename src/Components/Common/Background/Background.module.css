@@ -27,6 +27,7 @@
     top: -40px;
     left: 10%;
     transition: all 0.3s ease;
+    animation: topFadeIn 0.5s ease-in-out;
 }
 
 .background_bg_bottom {
@@ -34,7 +35,33 @@
     bottom: -40px;
     right: 10%;
     transition: all 0.3s ease;
+    animation: bottomFadeIn 0.5s ease-in-out;
 }
+
+@keyframes topFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bottomFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 0.4;
+        transform: translateY(0);
+    }
+}
+
 
 @media (max-width: 1024px) {
     .background_text_wrapper {

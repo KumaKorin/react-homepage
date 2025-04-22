@@ -6,7 +6,6 @@
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    /* 防止内容水平溢出 */
     box-sizing: border-box;
     user-select: none;
 }
@@ -17,9 +16,7 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    /* 确保宽度不会超出父元素 */
     min-width: 0;
-    /* 避免 min-width 限制导致溢出 */
     width: 100%;
     padding: 0 40px;
     margin-top: calc(80px * 1);
