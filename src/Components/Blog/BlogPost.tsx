@@ -40,7 +40,6 @@ const BlogPost = () => {
             try {
                 const res = await getPostsContent(slug || " ");
                 setArticleContent(res);
-                console.log(res.content);
                 setStatus("Done");
             } catch (error) {
                 console.error('Error fetching blog post:', error);
