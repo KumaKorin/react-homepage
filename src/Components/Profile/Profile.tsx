@@ -1,19 +1,17 @@
 import { FaBilibili, FaYoutube } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaGithub, FaTelegram } from "react-icons/fa";
-import { useRef, useState } from "react";
-
+import { FaGithub, FaQq, FaTelegram, FaTwitter } from "react-icons/fa";
+import { JSX, useRef, useState } from "react";
 import style from './Profile.module.css'
+import { profile } from '../../profile'
+import { BsTwitterX } from "react-icons/bs";
 
 const Profile = () => {
 
-    const profileNames = [
-        "KumaKorin", "熊こりん", "熊可狸", "阿狸丶A"
-    ]
-
     const [nameClicked, setNameClicked] = useState(1)
-
     const profileName = useRef<HTMLHeadingElement | null>(null)
+
+    const profileNames = profile.names;
 
     const handleNameClick = () => {
         setNameClicked((prev) => (prev + 1) % profileNames.length);
@@ -22,23 +20,39 @@ const Profile = () => {
         }
     }
 
+    const socialIcons: { [key: string]: JSX.Element } = {
+        github: <FaGithub />,
+        youtube: <FaYoutube />,
+        bilibili: <FaBilibili />,
+        telegram: <FaTelegram />,
+        qq: <FaQq />,
+        twitter: <FaTwitter />,
+        x: <BsTwitterX />,
+        email: <MdEmail />,
+    };
+
     return (
         <div className={style.profile_wrapper}>
             <div className={style.profile_container}>
                 <div className={style.profile_image_wrapper}>
-                    <img src="https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg" className={style.profile_image} />
+                    <img src={profile.image} className={style.profile_image} />
                 </div>
                 <div className={style.profile_content_wrapper}>
                     <div className={style.profile_info_wrapper}>
-                        <h1 className={style.profile_info_name} ref={profileName} onClick={() => handleNameClick()} title="Try click it!">KumaKorin</h1>
-                        <p className={style.profile_info_signature}>My existence is a perpetual miracle to me.</p>
+                        <h1 className={style.profile_info_name} ref={profileName} onClick={() => handleNameClick()} title="Try click it!">{profileNames[0]}</h1>
+                        <p className={style.profile_info_signature}>{profile.description}</p>
                     </div>
                     <div className={style.profile_social_wrapper}>
-                        <a href="https://github.com/KumaKorin" target="blank" className={style.profile_social_item}><FaGithub /></a>
-                        <a href="https://www.youtube.com/@KumaKorin" target="blank" className={style.profile_social_item}><FaYoutube /></a>
-                        <a href="https://space.bilibili.com/37078929" target="blank" className={style.profile_social_item}><FaBilibili /></a>
-                        <a href="https://t.me/KumaKorin" target="blank" className={style.profile_social_item}><FaTelegram /></a>
-                        <a href="mailto:kumakorin@duck.com" target="blank" className={style.profile_social_item}><MdEmail /></a>
+                        {Object.entries(profile.socialLinks).map(([key, link]) => (
+                            <a
+                                key={key}
+                                href={link}
+                                target="blank"
+                                className={style.profile_social_item}
+                            >
+                                {socialIcons[key]}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>
