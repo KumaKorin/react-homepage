@@ -84,6 +84,17 @@
     line-height: 1.4;
 }
 
+.post_content h1::after,
+.post_content h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-article-title);
+    opacity: 0.2;
+    margin-top: 0.5em;
+}
+
 .post_content p,
 .post_content li {
     font-size: 1em;
