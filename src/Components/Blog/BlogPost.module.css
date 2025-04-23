@@ -113,7 +113,7 @@
     font-size: 1.1em;
     line-height: 1.65;
     color: var(--color-article-text-primary);
-    padding: 16px;
+    padding: 0px 16px;
     text-align: left;
     border-radius: 12px;
     border-left: 8px solid var(--color-accent);
@@ -127,6 +127,11 @@
     font-size: 0.9em;
     padding: 0.2em 0.4em;
     line-height: 1.4;
+    box-sizing: border-box;
+    background-color: var(--color-text-primary);
+    color: var(--color-bg);
+    width: 100%;
+    white-space: pre-wrap;
 }
 
 .post_content img {
