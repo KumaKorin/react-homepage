@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import Background from '../Components/Common/Background/Background';
 import Footer from '../Components/Common/Footer/Footer';
+import { profile } from '../profile';
+
 
 const NotFound = () => {
-    document.title = 'NotFound - KumaKorin';
+    document.title = `NotFound - ${profile.sitename}`;
     return (
         <>
             <div

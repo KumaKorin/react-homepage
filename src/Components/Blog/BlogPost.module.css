@@ -7,7 +7,6 @@
     position: relative;
     overflow-x: hidden;
     box-sizing: border-box;
-    user-select: none;
 }
 
 .post_container {
@@ -39,7 +38,7 @@
     letter-spacing: 0.02em;
     font-size: 1rem;
     line-height: 1.6;
-    text-align: justify;
+    text-align: start;
 }
 
 .post_content h1 {
@@ -112,8 +111,16 @@
 
 .post_content blockquote {
     font-size: 1.1em;
-    padding: 1.5em;
     line-height: 1.65;
+    color: var(--color-article-text-primary);
+    padding: 16px;
+    text-align: left;
+    border-radius: 12px;
+    border-left: 8px solid var(--color-accent);
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .post_content code {

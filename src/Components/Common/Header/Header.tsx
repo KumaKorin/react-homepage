@@ -13,16 +13,16 @@ const Header: React.FC = () => {
 
   switch (currentPath) {
     case '/':
-      document.title = 'Home - KumaKorin';
+      document.title = `Home - ${profile.sitename}`;
       break;
     case '/blog':
-      document.title = 'Blog - KumaKorin';
+      document.title = `Blog - ${profile.sitename}`;
       break;
     case '/links':
-      document.title = 'Links - KumaKorin';
+      document.title = `Links - ${profile.sitename}`;
       break;
     default:
-      document.title = 'KumaKorin';
+      document.title = `${profile.sitename}`;
   }
 
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;

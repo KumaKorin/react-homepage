@@ -39,7 +39,6 @@ const BlogPost = () => {
             userLanguage = "en";
         }
     }
-    console.log(userLanguage);
     const { slug } = useParams<{ slug: string }>();
 
     const [status, setStatus] = useState<"Loading" | "Error" | "Done">("Loading");
