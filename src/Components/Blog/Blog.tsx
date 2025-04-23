@@ -14,6 +14,7 @@ interface PostsListShape {
 }
 
 const Blog: React.FC = () => {
+
     const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
 
     const [totalItems, setTotalItems] = useState<number>(0);
@@ -23,10 +24,22 @@ const Blog: React.FC = () => {
 
     const [status, setStatus] = useState<"Loading" | "Error" | "Done">("Loading");
 
+    let userLanguage = navigator.language;
+
+    if (import.meta.env.VITE_I18N) {
+
+
+        if (navigator.language.toLowerCase().startsWith("zh")) {
+            userLanguage = "zh-Hans";
+        } else {
+            userLanguage = "en";
+        }
+    }
+
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await getPostsList(currentPage - 1);
+                const res = await getPostsList(currentPage - 1, userLanguage);
                 setTotalItems(res.total);
                 setPosts(res.items);
                 setStatus("Done");

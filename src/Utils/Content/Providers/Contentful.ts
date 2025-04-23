@@ -4,6 +4,7 @@ import { Document } from '@contentful/rich-text-types';
 // 配置 dotenv
 const blogModel = import.meta.env.VITE_CONTENTFUL_BLOG_MODEL || '';
 const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
+const i18n: boolean = import.meta.env.VITE_I18N === 'true';
 
 // 修改 selectShape 类型，支持 sys.createdAt
 type selectShape = (
@@ -45,7 +46,7 @@ interface getPostsListShape {
     total: number;
 }
 
-export const getPostsList = async (offset: number): Promise<getPostsListShape> => {
+export const getPostsList = async (offset: number, locale?: string | "zh-hans"): Promise<getPostsListShape> => {
 
     const rawOrderType = import.meta.env.VITE_CONTENTFUL_BLOG_ORDER_TYPE || 'createdAt';
     const orderType = rawOrderType === 'createdAt' ? '-sys.createdAt' : '-fields.publishedTime';
@@ -67,6 +68,7 @@ export const getPostsList = async (offset: number): Promise<getPostsListShape> =
         limit: validItemsLimit,
         skip: validOffset * validItemsLimit,
         select: selectedFields,
+        ...(i18n && { locale: locale }),
     });
 
     return {
@@ -90,12 +92,13 @@ interface getPostsContentShape {
     isPinned?: boolean;
 }
 
-export const getPostsContent = async (slug: string): Promise<getPostsContentShape> => {
+export const getPostsContent = async (slug: string, locale?: string | "zh-hans"): Promise<getPostsContentShape> => {
 
     const res = await client.getEntries({
         content_type: blogModel,
         'fields.blogSlug': slug,
         limit: 1,
+        ...(i18n && { locale: locale }),
     });
 
     if (res.items.length === 0) {

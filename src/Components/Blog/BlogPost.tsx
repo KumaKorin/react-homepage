@@ -29,7 +29,17 @@ interface getPostsContentShape {
 }
 
 const BlogPost = () => {
+    let userLanguage = navigator.language;
 
+
+    if (import.meta.env.VITE_I18N) {
+        if (navigator.language.toLowerCase().startsWith("zh")) {
+            userLanguage = "zh-Hans";
+        } else {
+            userLanguage = "en";
+        }
+    }
+    console.log(userLanguage);
     const { slug } = useParams<{ slug: string }>();
 
     const [status, setStatus] = useState<"Loading" | "Error" | "Done">("Loading");
@@ -38,7 +48,7 @@ const BlogPost = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await getPostsContent(slug || " ");
+                const res = await getPostsContent(slug || " ", userLanguage);
                 setArticleContent(res);
                 setStatus("Done");
             } catch (error) {
@@ -50,7 +60,7 @@ const BlogPost = () => {
             }
         };
         fetchData();
-    }, [slug]);
+    }, []);
     return (
         <div className={style.post_wrapper}>
             <div className={style.post_container}>
