@@ -16,7 +16,7 @@ export const links: links[] = [
     {
         title: "纸绫",
         subtitle: "MoriDreamers",
-        link: "https://www.moridreamers.com/?from=korin.im",
+        link: "https://www.yuque.com/moridreamers?from=korin.im",
         avatar: "https://cravatar.com/avatar/2b826c131afe46c2166d3acf46862b35?s=512"
     },
     {
