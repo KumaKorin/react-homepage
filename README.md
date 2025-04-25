@@ -1,5 +1,7 @@
 # React Personal Home Page
 
+对 [white-aira](https://github.com/Aira-Sakuranomiya/white-aria) 拙劣的模仿。
+
 [使用方法](./doc/中文.md)
 
 ## Installation
