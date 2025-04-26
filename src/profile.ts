@@ -1,7 +1,7 @@
 export const profile: profile = {
     sitename: "KumaKorin",
     names: ["KumaKorin", "熊こりん", "熊可狸", "阿狸丶A"],
-    description: "My existence is a perpetual miracle to me.",
+    description: "Nothing easy is worth doing.",
     image: "https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg",
     socialLinks: {
         github: "https://github.com/KumaKorin",
