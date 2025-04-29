@@ -8,7 +8,8 @@ export const profile: profile = {
         youtube: "https://www.youtube.com/@KumaKorin",
         bilibili: "https://space.bilibili.com/37078929",
         telegram: "https://t.me/KumaKorin",
-        email: "mailto:kumakorin@duck.com"
+        email: "mailto:kumakorin@duck.com",
+        frontendMentor: "https://www.frontendmentor.io/profile/KumaKorin",
     }
 };
 

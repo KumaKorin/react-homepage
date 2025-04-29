@@ -1,6 +1,7 @@
 import { FaBilibili, FaYoutube } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaQq, FaTelegram, FaTwitter } from "react-icons/fa";
+import { SiFrontendmentor } from "react-icons/si";
 import { JSX, useRef, useState } from "react";
 import style from './Profile.module.css'
 import { profile } from '../../profile'
@@ -29,6 +30,7 @@ const Profile = () => {
         twitter: <FaTwitter />,
         x: <BsTwitterX />,
         email: <MdEmail />,
+        frontendMentor: <SiFrontendmentor />,
     };
 
     return (
