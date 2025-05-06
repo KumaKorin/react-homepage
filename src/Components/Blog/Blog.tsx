@@ -4,6 +4,7 @@ import Background from "../Common/Background/Background"
 import { getPostsList } from "../../Utils/Content/Providers/Contentful"
 import Pagination from "../Common/Pagination/Pagination"
 import React, { useEffect, useState } from "react"
+import useStorage from "../../Utils/Hooks/useStorage"
 
 interface PostsListShape {
     title: string;
@@ -14,21 +15,14 @@ interface PostsListShape {
 }
 
 const Blog: React.FC = () => {
-
     const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
-
     const [totalItems, setTotalItems] = useState<number>(0);
-
     const [posts, setPosts] = useState<PostsListShape[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
-
     const [status, setStatus] = useState<"Loading" | "Error" | "Done">("Loading");
 
     let userLanguage = navigator.language;
-
     if (import.meta.env.VITE_I18N) {
-
-
         if (navigator.language.toLowerCase().startsWith("zh")) {
             userLanguage = "zh-Hans";
         } else {
@@ -36,23 +30,37 @@ const Blog: React.FC = () => {
         }
     }
 
+    const storageKey = `${userLanguage}_BlogList_Page${currentPage}`;
+    const storageHandler = useStorage<PostsListShape[]>(storageKey);
+
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const res = await getPostsList(currentPage - 1, userLanguage);
                 setTotalItems(res.total);
+                storageHandler("put", res.items);
                 setPosts(res.items);
                 setStatus("Done");
             } catch (err) {
                 console.log(err);
                 setStatus("Error");
-                setTimeout(() => {
-                    document.getElementById("error_details")!.innerHTML = String(err);
-                }, 200)
             }
         };
+
+        const isValid = storageHandler("check") as boolean;
+        if (isValid) {
+            const localPosts = storageHandler("get") as PostsListShape[] | null;
+            if (localPosts) {
+                setTotalItems(localPosts.length);
+                setPosts(localPosts);
+                setStatus("Done");
+            }
+            // 如果存在本地缓存且有效直接 return
+            return;
+        }
+
         fetchPosts();
-    }, [currentPage]);
+    }, [currentPage, userLanguage, storageHandler]);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import Background from '../Components/Common/Background/Background';
 import Footer from '../Components/Common/Footer/Footer';
-import { profile } from '../profile';
+import useDocumentTitle from '../Utils/Hooks/useDocumentTitle';
 
 
 const NotFound = () => {
-    document.title = `NotFound - ${profile.sitename}`;
+    useDocumentTitle(({ documentTitle: "404" }));
     return (
         <>
             <div

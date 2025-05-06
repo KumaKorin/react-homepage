@@ -7,23 +7,11 @@ import { profile } from "../../../profile"
 
 import style from './Header.module.css';
 
+
 const Header: React.FC = () => {
+
   const location = useLocation();
   const currentPath = location.pathname;
-
-  switch (currentPath) {
-    case '/':
-      document.title = `Home - ${profile.sitename}`;
-      break;
-    case '/blog':
-      document.title = `Blog - ${profile.sitename}`;
-      break;
-    case '/links':
-      document.title = `Links - ${profile.sitename}`;
-      break;
-    default:
-      document.title = `${profile.sitename}`;
-  }
 
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
