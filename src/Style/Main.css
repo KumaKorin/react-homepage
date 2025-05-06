@@ -59,6 +59,14 @@
     --font-weight-thin: 200;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-main);
+    background-color: var(--color-bg);
+    transition: transform 0.3s ease-in-out;
+}
+
 body.light {
     --color-bg: var(--color-light-bg);
     --color-bg-card: var(--color-light-bg-card);
@@ -95,18 +103,6 @@ body.dark {
     --color-article-text: var(--color-dark-article-text);
     --color-article-text-secondary: var(--color-dark-text-secondary);
     --color-article-link: var(--color-dark-article-link);
-}
-
-body.loading {
-    display: none;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family-main);
-    background-color: var(--color-bg);
-    transition: all 0.3s ease-in-out;
 }
 
 main {

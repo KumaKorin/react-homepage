@@ -8,6 +8,7 @@
     z-index: 1;
     overflow: hidden;
     perspective: 1000px;
+    user-select: none;
 }
 
 .profile_container {
@@ -39,7 +40,7 @@
 }
 
 .profile_image:active {
-    transform: rotate(360deg) scale(1.1);
+    transform: scale(1.1);
     transform-style: preserve-3d;
 }
 
@@ -170,6 +171,11 @@
         max-width: 160px;
     }
 
+    .profile_info_wrapper {
+        width: 100%;
+        align-items: center;
+    }
+
     .profile_info_signature {
         font-size: var(--font-size-medium);
         margin-top: 0.5rem;
@@ -184,6 +190,7 @@
     .profile_content_wrapper {
         align-items: center;
         text-align: center;
+        justify-content: center;
     }
 
     .profile_info_wrapper {

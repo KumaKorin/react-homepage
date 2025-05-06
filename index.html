@@ -6,11 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="https://i1.mcobj.com/blog/2021/10/cropped-20210402_6287886e90680-192x192.png" sizes="192x192">
   <title>KumaKorin</title>
+  <style>
+    :root[data-theme='light'] {
+      --color-bg: var(--color-light-bg);
+      --color-text-primary: var(--color-light-text-primary);
+    }
+
+    :root[data-theme='dark'] {
+      --color-bg: var(--color-dark-bg);
+      --color-text-primary: var(--color-dark-text-primary);
+    }
+
+    body {
+      background-color: var(--color-bg);
+    }
+  </style>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
+  <script>
+    const userTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', userTheme);
+  </script>
 </body>
 
 </html>

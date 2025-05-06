@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import style from './BlogPost.module.css'
 import Background from '../Common/Background/Background'
 import { getPostsContent } from '../../Utils/Content/Providers/Contentful'
@@ -15,6 +13,7 @@ import useStorage from '../../Utils/Hooks/useStorage'
 
 const options = {
     renderNode: {
+        /* eslint-disable @typescript-eslint/no-explicit-any */
         [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
             const content = node.content.map((child: any) => child.value).join('');
             if (content.includes('<img')) {
@@ -57,28 +56,41 @@ const BlogPost = () => {
         const fetchData = async () => {
             try {
                 const res = await getPostsContent(slug || " ", userLanguage);
-                storageHandler("put", res)
+                storageHandler("put", res);
                 setArticleContent(res);
                 setStatus("Done");
             } catch (error) {
                 console.error('Error fetching blog post:', error);
                 setStatus("Error");
                 setDocumentTitle("Error");
+
+                // 缓存错误状态
+                storageHandler("put", { status: "error", message: `${error}` } as unknown as getPostsContentShape);
+
                 setTimeout(() => {
                     document.getElementById("error_details")!.innerHTML = String(error);
-                }, 200)
+                }, 200);
             }
         };
 
         const isValid = storageHandler("check") as boolean;
         if (isValid) {
-            const localPosts = storageHandler("get") as getPostsContentShape | null;
+            const localPosts = storageHandler("get") as getPostsContentShape | { status: string } | null;
             if (localPosts) {
-                setArticleContent(localPosts)
+                if ((localPosts as { status: string, message: string }).status === "error") {
+                    // 如果缓存中是错误状态
+                    setStatus("Error");
+                    setDocumentTitle("Error");
+                    setTimeout(() => {
+                        document.getElementById("error_details")!.innerHTML = (localPosts as { status: string; message: string }).message;
+                    }, 200);
+                    return;
+                }
+
+                setArticleContent(localPosts as getPostsContentShape);
                 setStatus("Done");
+                return;
             }
-            // 如果存在本地缓存且有效直接 return
-            return;
         }
 
         fetchData();
@@ -90,7 +102,7 @@ const BlogPost = () => {
 
     return (
         <div className={style.post_wrapper}>
-            <div className={style.post_container}>
+            <article className={style.post_container} key={status}>
                 <h1 className={style.post_title}>
                     {
                         status === "Done"
@@ -100,7 +112,7 @@ const BlogPost = () => {
                                 : "Now Loading ..."
                     }
                 </h1>
-                <div className={style.post_content}>
+                <section className={style.post_content} style={{ animationDelay: "200ms" }}>
                     {
                         status === "Done" && articleContent
                             ? documentToReactComponents(articleContent.content, options)
@@ -118,8 +130,8 @@ const BlogPost = () => {
                             : null
                     }
 
-                </div>
-            </div>
+                </section>
+            </article>
             {
                 status === "Done" || status === "Loading"
                     ? <Background text="POST" />
