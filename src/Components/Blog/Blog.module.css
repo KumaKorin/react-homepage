@@ -19,7 +19,7 @@
     min-width: 320px;
     width: 100%;
     margin-top: calc(80px * 1);
-    margin-bottom: 16rem;
+    margin-bottom: 12rem;
     position: relative;
     box-sizing: border-box;
 }
@@ -99,7 +99,12 @@
 @media (max-width: 1024px) {
     .blog_container {
         padding: 0 20px;
+        margin-bottom: 4rem;
     }
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+    .blog_container {
+        margin-bottom: 4rem;
+    }
+}

@@ -67,8 +67,8 @@ const Blog: React.FC = () => {
     }, [currentPage, userLanguage, storageHandler, totalItems, totalItemsHandler]);
 
     const handlePageChange = (page: number) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         setCurrentPage(page);
-        window.scrollTo({ top: 0, behavior: 'smooth' })
     };
 
     return (
