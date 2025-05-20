@@ -120,13 +120,13 @@ const BlogPost = () => {
                                 ? <>
                                     <div className={style.tip_error}>Something went wrong :(</div>
                                     <div className={style.tip_error_details} id="error_details"></div>
-                                    <div className={style.tip_error_details}><Link to="/blog">{`< Back to blog list`}</Link></div>
+                                    <div className={style.tip_error_details}><Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{`< Back to blog list`}</Link></div>
                                 </>
                                 : <div className={style.tip_loading}> Now Loading ...</div>
                     }
                     {
                         status === "Done"
-                            ? <Link to="/blog">{`< Back to blog list`}</Link>
+                            ? <Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>{`< Back to blog list`}</Link>
                             : null
                     }
 

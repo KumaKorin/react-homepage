@@ -33,11 +33,14 @@ const Blog: React.FC = () => {
     const storageKey = `${userLanguage}_BlogList_Page${currentPage}`;
     const storageHandler = useStorage<PostsListShape[]>(storageKey);
 
+    const totalItemsHandler = useStorage<number>('TotalItems');
+
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const res = await getPostsList(currentPage - 1, userLanguage);
                 setTotalItems(res.total);
+                totalItemsHandler("put", res.total);
                 storageHandler("put", res.items);
                 setPosts(res.items);
                 setStatus("Done");
@@ -50,8 +53,9 @@ const Blog: React.FC = () => {
         const isValid = storageHandler("check") as boolean;
         if (isValid) {
             const localPosts = storageHandler("get") as PostsListShape[] | null;
+            const totalItems = totalItemsHandler("get") as number;
             if (localPosts) {
-                setTotalItems(localPosts.length);
+                setTotalItems(totalItems);
                 setPosts(localPosts);
                 setStatus("Done");
             }
@@ -60,10 +64,11 @@ const Blog: React.FC = () => {
         }
 
         fetchPosts();
-    }, [currentPage, userLanguage, storageHandler]);
+    }, [currentPage, userLanguage, storageHandler, totalItems, totalItemsHandler]);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     };
 
     return (

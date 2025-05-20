@@ -25,11 +25,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ articleId, articleTitle, articleDes
     return (
         <div className={style.blog_card_wrapper}>
             <div className={style.blog_card_container} style={cardStyle}>
-                <Link className={style.blog_card_link} to={`/blog/${articleId}`}><h1 className={style.blog_card_title}>{articleTitle}</h1></Link>
+                <Link className={style.blog_card_link} to={`/blog/${articleId}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}><h1 className={style.blog_card_title}>{articleTitle}</h1></Link>
                 <p className={style.blog_card_description}>{articleDescription}</p>
                 <div className={style.blog_card_info}>
                     <p className={style.blog_card_date}><AiFillCalendar /> {formattedDate} </p>
-                    <Link className={style.blog_card_link} to={`/blog/${articleId}`} >Read More <FaAngleRight /></Link>
+                    <Link className={style.blog_card_link} to={`/blog/${articleId}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >Read More <FaAngleRight /></Link>
                 </div>
             </div>
         </div>

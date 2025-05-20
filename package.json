@@ -12,7 +12,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
     "contentful": "^11.5.15",
-    "framer-motion": "^12.7.4",
+    "framer-motion": "^12.10.2",
     "html-react-parser": "^5.2.3",
     "lz-string": "^1.5.0",
     "react": "^19.0.0",
