@@ -11,7 +11,7 @@
     border-radius: 8px;
     background-color: var(--color-bg-card);
     max-width: 960px;
-    width: calc(100vw - 80px);
+    width: calc(100vw - 120px);
     transition: all 0.3s ease;
     animation: blog_card_fadeIn 0.5s ease forwards;
 }
@@ -81,8 +81,8 @@
 
 @media (max-width: 1024px) {
 
-    .blog_card_wapper,
+    /* .blog_card_wapper,
     .blog_card_container {
         border-radius: 0px;
-    }
+    } */
 }

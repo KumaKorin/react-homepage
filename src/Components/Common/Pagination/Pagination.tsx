@@ -40,7 +40,7 @@ const Pagination: React.FC<PaginationShape> = ({ totalItems, itemsLimitPerPage, 
                 <div className={style.pagination}>
                     {/* 首页按钮 */}
                     <button
-                        className={style.pagination_pageButton}
+                        className={`${style.pagination_pageButton} ${style.display_none}`}
                         disabled={currentPage === 1}
                         onClick={() => handlePageChange(1)}
                     >
@@ -78,7 +78,7 @@ const Pagination: React.FC<PaginationShape> = ({ totalItems, itemsLimitPerPage, 
 
                     {/* 末页按钮 */}
                     <button
-                        className={style.pagination_pageButton}
+                        className={`${style.pagination_pageButton} ${style.display_none}`}
                         disabled={currentPage === totalPages}
                         onClick={() => handlePageChange(totalPages)}
                     >
