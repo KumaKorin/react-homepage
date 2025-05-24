@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "contentful": "^11.5.15",
     "framer-motion": "^12.10.2",
     "html-react-parser": "^5.2.3",

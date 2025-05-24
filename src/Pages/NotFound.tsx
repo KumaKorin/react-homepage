@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Background from '../Components/Common/Background/Background';
 import Footer from '../Components/Common/Footer/Footer';
 import useDocumentTitle from '../Utils/Hooks/useDocumentTitle';
@@ -49,10 +49,10 @@ const StyledLink = styled(Link)`
     border: 1px solid var(--color-accent-title);
     padding: 10px 20px;
     border-radius: 12px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: border  ease 0.3s, color ease 0.3s;
 
     &:hover {
-        background-color: var(--color-accent-hover);
+        border: 1px solid var(--color-accent-solid);
         color: var(--color-text-secondary);
     }
 `;
