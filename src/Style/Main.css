@@ -12,6 +12,7 @@
     --color-light-bg-card: hsl(0, 0%, 100%);
     --color-light-text-primary: hsl(0, 0%, 20%);
     --color-light-text-secondary: hsl(0, 0%, 27%);
+    --color-light-text-disabled: hsl(0, 0%, 50%);
     --color-light-accent: hsla(0, 70%, 80%, 0.6);
     --color-light-accent-stroke: hsla(0, 70%, 80%, 0.3);
     --color-light-accent-solid: hsl(0, 70%, 80%);
@@ -28,6 +29,7 @@
     --color-dark-bg-card: hsl(0, 0%, 18.04%);
     --color-dark-text-primary: hsl(0, 0%, 92%);
     --color-dark-text-secondary: hsl(0, 0%, 87%);
+    --color-dark-text-disabled: hsl(0, 0%, 70%);
     --color-dark-accent: hsla(0, 40%, 60%, 0.6);
     --color-dark-accent-stroke: hsla(0, 40%, 60%, 0.3);
     --color-dark-accent-solid: hsl(0, 40%, 60%);
@@ -72,6 +74,7 @@ body.light {
     --color-bg-card: var(--color-light-bg-card);
     --color-text-primary: var(--color-light-text-primary);
     --color-text-secondary: var(--color-light-text-secondary);
+    --color-text-disabled: var(--color-light-text-disabled);
     --color-accent: var(--color-light-accent);
     --color-accent-stroke: var(--color-light-accent-stroke);
     --color-accent-solid: var(--color-light-accent-solid);
@@ -91,6 +94,7 @@ body.dark {
     --color-bg-card: var(--color-dark-bg-card);
     --color-text-primary: var(--color-dark-text-primary);
     --color-text-secondary: var(--color-dark-text-secondary);
+    --color-text-disabled: var(--color-dark-text-disabled);
     --color-accent: var(--color-dark-accent);
     --color-accent-stroke: var(--color-dark-accent-stroke);
     --color-accent-solid: var(--color-dark-accent-solid);
