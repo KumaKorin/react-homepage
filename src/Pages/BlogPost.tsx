@@ -1,8 +1,8 @@
-import BlogPost from "../Components/Blog/BlogPost";
-import useDocumentTitle from "../Utils/Hooks/useDocumentTitle";
+import BlogPost from '../Components/Blog/BlogPost'
+import useDocumentTitle from '../Utils/Hooks/useDocumentTitle'
 
 const BlogPostPage = () => {
-    useDocumentTitle({ documentTitle: "Posts" });
+    useDocumentTitle({ documentTitle: 'Posts' })
     return (
         <>
             <BlogPost />

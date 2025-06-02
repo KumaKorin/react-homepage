@@ -11,19 +11,17 @@ const Links = () => {
                     <h1 className={style.links_title}>Friends</h1>
                     <div className={style.links_card_wrapper}>
                         <div className={style.links_card_container}>
-                            {
-                                links.map((item, index) => {
-                                    return (
-                                        <LinksCard
-                                            key={index}
-                                            title={item.title}
-                                            subtitle={item.subtitle}
-                                            link={item.link}
-                                            avatar={item.avatar}
-                                        />
-                                    )
-                                })
-                            }
+                            {links.map((item, index) => {
+                                return (
+                                    <LinksCard
+                                        key={index}
+                                        title={item.title}
+                                        subtitle={item.subtitle}
+                                        link={item.link}
+                                        avatar={item.avatar}
+                                    />
+                                )
+                            })}
                         </div>
                     </div>
                 </div>

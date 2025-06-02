@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import styled from '@emotion/styled';
-import Background from '../Components/Common/Background/Background';
-import Footer from '../Components/Common/Footer/Footer';
-import useDocumentTitle from '../Utils/Hooks/useDocumentTitle';
+import { Link } from 'react-router-dom'
+import styled from '@emotion/styled'
+import Background from '../Components/Common/Background/Background'
+import Footer from '../Components/Common/Footer/Footer'
+import useDocumentTitle from '../Utils/Hooks/useDocumentTitle'
 
 const NotFound = () => {
-    useDocumentTitle({ documentTitle: "404" });
+    useDocumentTitle({ documentTitle: '404' })
     return (
         <>
             <NotFoundContainer>
@@ -13,12 +13,12 @@ const NotFound = () => {
                     <h3>404 Not Found</h3>
                     <StyledLink to="/">返回主页</StyledLink>
                 </ContentWrapper>
-                <Background text='Error' />
+                <Background text="Error" />
             </NotFoundContainer>
             <Footer />
         </>
-    );
-};
+    )
+}
 
 const NotFoundContainer = styled.div`
     height: 100vh;
@@ -29,7 +29,7 @@ const NotFoundContainer = styled.div`
     align-items: center;
     text-align: center;
     overflow-x: hidden;
-`;
+`
 
 const ContentWrapper = styled.div`
     font-size: 64px;
@@ -39,7 +39,7 @@ const ContentWrapper = styled.div`
     h3 {
         margin-bottom: 20px;
     }
-`;
+`
 
 const StyledLink = styled(Link)`
     font-size: 24px;
@@ -49,12 +49,12 @@ const StyledLink = styled(Link)`
     border: 1px solid var(--color-accent-title);
     padding: 10px 20px;
     border-radius: 12px;
-    transition: border  ease 0.3s, color ease 0.3s;
+    transition: border ease 0.3s, color ease 0.3s;
 
     &:hover {
         border: 1px solid var(--color-accent-solid);
         color: var(--color-text-secondary);
     }
-`;
+`
 
-export default NotFound;
+export default NotFound
