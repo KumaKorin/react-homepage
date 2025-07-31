@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { AiFillSun, AiFillMoon, AiFillHome, AiFillMessage } from 'react-icons/ai'
+import { AiFillSun, AiFillMoon, AiFillHome } from 'react-icons/ai'
 import { MdArticle } from 'react-icons/md'
+import { FaNoteSticky } from 'react-icons/fa6'
 import { FaLink } from 'react-icons/fa'
 import { profile } from '../../../profile'
 
@@ -79,7 +80,7 @@ const Header: React.FC = () => {
                         to="/state"
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     >
-                        <AiFillMessage /> State
+                        <FaNoteSticky /> State
                     </Link>
                     <Link
                         className={`${style.nav_item} ${currentPath === '/links' ? style.active : ''}`}
