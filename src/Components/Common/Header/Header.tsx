@@ -14,6 +14,8 @@ const Header: React.FC = () => {
 
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
+    const isMicrosoftEdge = /Edg\/\d+/.test(navigator.userAgent)
+
     if (!localStorage.getItem('theme')) {
         localStorage.setItem('theme', prefersDark ? 'dark' : 'light')
     }
@@ -53,7 +55,15 @@ const Header: React.FC = () => {
     const handleThemeToggle = () => setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
 
     return (
-        <nav className={`${style.nav} ${isScrolled ? style.scrolled : ''}`}>
+        <nav
+            className={`${style.nav} ${
+                isScrolled && !isMicrosoftEdge
+                    ? style.scrolled
+                    : isScrolled && isMicrosoftEdge
+                    ? style.edgeScrolled
+                    : ''
+            }`}
+        >
             <div className={style.nav_wrapper}>
                 <div className={style.nav_title}>
                     <Link className={style.nav_logo} to="/">
