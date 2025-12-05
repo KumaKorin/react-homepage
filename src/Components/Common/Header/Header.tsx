@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AiFillSun, AiFillMoon, AiFillHome } from 'react-icons/ai'
 import { MdArticle } from 'react-icons/md'
-import { FaNoteSticky } from 'react-icons/fa6'
+// import { FaNoteSticky } from 'react-icons/fa6'
 import { FaLink } from 'react-icons/fa'
 import { profile } from '../../../profile'
+import { useTheme } from '../../../Context/themeContext'
 
 import style from './Header.module.css'
 
@@ -12,17 +13,10 @@ const Header: React.FC = () => {
     const location = useLocation()
     const currentPath = location.pathname
 
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-
     const isMicrosoftEdge = /Edg\/\d+/.test(navigator.userAgent)
 
-    if (!localStorage.getItem('theme')) {
-        localStorage.setItem('theme', prefersDark ? 'dark' : 'light')
-    }
-
-    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-        return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
-    })
+    const { theme, setTheme } = useTheme()
+    const handleThemeToggle = () => setTheme(theme === 'light' ? 'dark' : 'light')
 
     const [isScrolled, setIsScrolled] = useState(false)
 
@@ -52,7 +46,6 @@ const Header: React.FC = () => {
     }, [theme])
 
     const themeToggle = useRef<HTMLButtonElement | null>(null)
-    const handleThemeToggle = () => setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
 
     return (
         <nav
@@ -85,13 +78,13 @@ const Header: React.FC = () => {
                     >
                         <MdArticle /> Blog
                     </Link>
-                    <Link
+                    {/* <Link
                         className={`${style.nav_item} ${currentPath === '/state' ? style.active : ''}`}
                         to="/state"
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     >
                         <FaNoteSticky /> State
-                    </Link>
+                    </Link> */}
                     <Link
                         className={`${style.nav_item} ${currentPath === '/links' ? style.active : ''}`}
                         to="/links"

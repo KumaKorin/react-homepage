@@ -19,6 +19,27 @@
     margin: 0 auto;
 }
 
+.footer_upyun {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer_upyun img {
+    height: 40px;
+    width: auto;
+}
+
+.footer_upyun {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-main);
+}
+
 .footer_miit a {
     color: var(--color-text-primary);
     text-decoration: none;
@@ -33,5 +54,4 @@
     .footer_wrapper {
         display: none;
     }
-
 }

@@ -1,4 +1,5 @@
 import Blog from '../Components/Blog/Blog'
+import Footer from '../Components/Common/Footer/Footer'
 import useDocumentTitle from '../Utils/Hooks/useDocumentTitle'
 
 const BlogPage = () => {
@@ -6,6 +7,7 @@ const BlogPage = () => {
     return (
         <>
             <Blog />
+            <Footer />
         </>
     )
 }

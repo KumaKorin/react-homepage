@@ -5,6 +5,7 @@ import BlogPage from '../Pages/Blog'
 import BlogPostPage from '../Pages/BlogPost'
 import LinksPage from '../Pages/Links'
 import NotFoundPage from '../Pages/NotFound'
+import State from '../Components/State/State'
 
 const appRouter = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ const appRouter = createBrowserRouter([
             { path: '/blog', element: <BlogPage /> },
             { path: '/blog/:slug', element: <BlogPostPage /> },
             { path: '/links', element: <LinksPage /> },
+            { path: '/state', element: <State /> },
             { path: '*', element: <NotFoundPage /> }
         ]
     }
