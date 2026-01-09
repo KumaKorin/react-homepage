@@ -36,9 +36,12 @@ const Links = () => {
                             })}
                         </div>
                     </div>
+
                     {tipsDisplay ? (
                         <p className={style.links_tip}>
-                            欢迎交换友链，请联系 <a href="mailto:me@korin.im">me@korin.im</a>！
+                            <span>
+                                排名不分先后。欢迎交换友链，请联系 <a href="mailto:me@korin.im">me@korin.im</a>！
+                            </span>
                         </p>
                     ) : null}
                 </div>

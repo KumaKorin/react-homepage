@@ -36,8 +36,8 @@ export const links: links[] = [
         avatar: 'https://cravatar.com/avatar/2b826c131afe46c2166d3acf46862b35?s=512'
     },
     {
-        title: 'Aira',
-        subtitle: '艾了个拉',
+        title: '艾了个拉',
+        subtitle: 'Aira',
         link: 'https://aira.cafe/?from=korin.im',
         avatar: 'https://cravatar.com/avatar/588a9fd8fde139d73aaeb95dd19b6827?s=512'
     },
@@ -46,15 +46,17 @@ export const links: links[] = [
         link: 'https://akutazehy.github.io/?from=korin.im',
         avatar: 'https://cravatar.com/avatar/54e2d9927b6a0b0bbce12bd4df8a913ae364f4de3b428e7a5cb1bddcec37ffb4?s=512'
     },
+
     {
-        title: 'LARMAXHARKERX',
-        subtitle: '唐辫小二',
-        link: 'https://larmaxharkerx.github.io/?from=korin.im',
-        avatar: 'https://i1.mcobj.com/imgb/u1/20260109_69606ac284bd2.jpeg'
-    },
-    {
-        title: 'Wenuu',
+        title: '是未来呐',
+        subtitle: 'Wenuu',
         link: 'https://www.wenuu.cn/?from=korin.im',
         avatar: 'https://cravatar.com/avatar/23c51fce715e221bb371b4bd2437d8bc?s=512'
+    },
+    {
+        title: '唐辫小二',
+        subtitle: 'LARMAXHARKER',
+        link: 'https://larmaxharkerx.github.io/?from=korin.im',
+        avatar: 'https://i1.mcobj.com/imgb/u1/20260109_69606ac284bd2.jpeg'
     }
 ]

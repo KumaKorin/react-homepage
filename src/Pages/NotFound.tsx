@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
 import Background from '../Components/Common/Background/Background'
 import Footer from '../Components/Common/Footer/Footer'
 import useDocumentTitle from '../Utils/Hooks/useDocumentTitle'
 
 const NotFound = () => {
-    useDocumentTitle({ documentTitle: '404' })
+    useDocumentTitle({ documentTitle: 'Not Found' })
     return (
         <>
             <NotFoundContainer>
                 <ContentWrapper>
                     <h3>404 Not Found</h3>
-                    <StyledLink to="/">返回主页</StyledLink>
+                    <ReturnButton to="/">返回主页</ReturnButton>
                 </ContentWrapper>
                 <Background text="Error" />
             </NotFoundContainer>
@@ -31,6 +32,19 @@ const NotFoundContainer = styled.div`
     overflow-x: hidden;
 `
 
+const fadeInUp = keyframes`
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+`
+
 const ContentWrapper = styled.div`
     font-size: 64px;
     font-weight: bold;
@@ -38,10 +52,25 @@ const ContentWrapper = styled.div`
 
     h3 {
         margin-bottom: 20px;
+        animation: ${fadeInUp} 0.5s ease forwards;
     }
 `
 
-const StyledLink = styled(Link)`
+const buttonFadeInUp = keyframes`
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+`
+
+const ReturnButton = styled(Link)`
+    display: inline-block;
     font-size: 24px;
     font-weight: normal;
     color: var(--color-accent-title);
@@ -49,10 +78,12 @@ const StyledLink = styled(Link)`
     border: 1px solid var(--color-accent-title);
     padding: 10px 20px;
     border-radius: 12px;
-    transition: border ease 0.3s, color ease 0.3s;
+    transition: all ease 0.3s;
+    animation: ${buttonFadeInUp} 0.5s ease forwards;
 
     &:hover {
         border: 1px solid var(--color-accent-solid);
+        background-color: var(--color-accent-solid);
         color: var(--color-text-secondary);
     }
 `
