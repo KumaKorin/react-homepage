@@ -2,13 +2,24 @@ import Background from '../Common/Background/Background'
 import style from './Links.module.css'
 import LinksCard from './LinksCard'
 import { links } from '../../profile'
+import { useState } from 'react'
 
 const Links = () => {
+    const [tipsDisplay, setTipsDisplay] = useState(false)
+
     return (
         <>
             <div className={style.links_wrapper}>
                 <div className={style.links_container}>
-                    <h1 className={style.links_title}>Friends</h1>
+                    <h1
+                        className={style.links_title}
+                        onClick={() => {
+                            if (!tipsDisplay) setTipsDisplay(true)
+                        }}
+                        title="Try click it!"
+                    >
+                        Friends
+                    </h1>
                     <div className={style.links_card_wrapper}>
                         <div className={style.links_card_container}>
                             {links.map((item, index) => {
@@ -19,11 +30,17 @@ const Links = () => {
                                         subtitle={item.subtitle}
                                         link={item.link}
                                         avatar={item.avatar}
+                                        animationDelay={index * 60}
                                     />
                                 )
                             })}
                         </div>
                     </div>
+                    {tipsDisplay ? (
+                        <p className={style.links_tip}>
+                            欢迎交换友链，请联系 <a href="mailto:me@korin.im">me@korin.im</a>！
+                        </p>
+                    ) : null}
                 </div>
             </div>
             <Background text="LINKS" />

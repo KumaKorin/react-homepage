@@ -3,7 +3,6 @@
 @import url('https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css');
 
 :root {
-
     --color-theme-main: hsl(5.32, 100%, 69.02%);
     --color-theme-main-600: hsl(5, 44%, 42%);
 
@@ -46,8 +45,8 @@
     --color-common-title: hsl(5, 51%, 67%);
 
     /* 字体变量 */
-    --font-family-main: "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei", sans-serif;
-    --font-family-mono: "Roboto Mono", "Courier New", "Courier", monospace;
+    --font-family-main: 'PingFang SC', 'HarmonyOS Sans SC', 'MiSans', 'Microsoft YaHei', sans-serif;
+    --font-family-mono: 'Roboto Mono', 'Courier New', 'Courier', monospace;
     --font-size-page-title: 58px;
     --font-size-large: 32px;
     --font-size-medium: 24px;
@@ -131,9 +130,7 @@ body {
 }
 
 @media (max-width: 768px) {
-
     ::-webkit-scrollbar {
         width: 0px;
     }
-
 }

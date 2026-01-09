@@ -14,7 +14,7 @@ const Profile = () => {
     const profileNames = profile.names
 
     const handleNameClick = () => {
-        setNameClicked((prev) => (prev + 1) % profileNames.length)
+        setNameClicked(prev => (prev + 1) % profileNames.length)
         if (profileName.current) {
             profileName.current.textContent = profileNames[nameClicked]
         }
@@ -52,7 +52,15 @@ const Profile = () => {
                     </div>
                     <div className={style.profile_social_wrapper}>
                         {Object.entries(profile.socialLinks).map(([key, link]) => (
-                            <a key={key} href={link} target="blank" className={style.profile_social_item}>
+                            <a
+                                key={key}
+                                href={link}
+                                target="blank"
+                                className={style.profile_social_item}
+                                style={{
+                                    animationDelay: `${Object.keys(profile.socialLinks).indexOf(key) * 0.05 + 0.6}s`
+                                }}
+                            >
                                 {socialIcons[key]}
                             </a>
                         ))}

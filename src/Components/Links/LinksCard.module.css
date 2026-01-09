@@ -15,12 +15,41 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    opacity: 0;
+    animation: linkCardFadeIn 0.6s ease forwards;
+}
+
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(4px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+@keyframes linkCardFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(4px);
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
 }
 
 .links_card_container:hover {
     scale: 1.02;
 }
-
 
 .links_card_container:hover .links_card_title {
     color: var(--color-accent-hover);

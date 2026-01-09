@@ -13,17 +13,19 @@
     max-width: 960px;
     width: calc(100vw - 120px);
     transition: all 0.3s ease;
-    animation: blog_card_fadeIn 0.5s ease forwards;
+    animation: blog_card_fadeIn 0.8s ease forwards;
 }
 
 @keyframes blog_card_fadeIn {
     0% {
         opacity: 0;
+        filter: blur(4px);
         transform: translateY(30px);
     }
 
     100% {
         opacity: 1;
+        filter: blur(0px);
         transform: translateY(0);
     }
 }
@@ -66,7 +68,6 @@
 .blog_card_link svg {
     vertical-align: middle;
     font-size: var(--font-size-small);
-
 }
 
 .blog_card_link {
@@ -80,7 +81,6 @@
 }
 
 @media (max-width: 1024px) {
-
     /* .blog_card_wrapper,
     .blog_card_container {
         border-radius: 0px;

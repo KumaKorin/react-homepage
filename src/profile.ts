@@ -47,9 +47,10 @@ export const links: links[] = [
         avatar: 'https://cravatar.com/avatar/54e2d9927b6a0b0bbce12bd4df8a913ae364f4de3b428e7a5cb1bddcec37ffb4?s=512'
     },
     {
-        title: 'LockRim',
-        link: 'https://lockrim.top/?from=korin.im',
-        avatar: 'https://lockrim.top/images/avatar.jpg'
+        title: 'LARMAXHARKERX',
+        subtitle: '唐辫小二',
+        link: 'https://larmaxharkerx.github.io/?from=korin.im',
+        avatar: 'https://i1.mcobj.com/imgb/u1/20260109_69606ac284bd2.jpeg'
     },
     {
         title: 'Wenuu',

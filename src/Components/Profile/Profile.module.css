@@ -32,6 +32,21 @@
     margin-right: 3rem;
     transition: all 0.4s ease;
     user-select: none;
+    opacity: 1;
+    animation: profileImageFadeIn 0.6s ease;
+}
+
+@keyframes profileImageFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(4px);
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
 }
 
 .profile_image:hover {
@@ -71,6 +86,21 @@
     user-select: none;
     transform-origin: center left;
     transition: all 0.3s ease;
+    opacity: 1;
+    animation: profileNameFadeIn 0.6s ease;
+}
+
+@keyframes profileNameFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(4px);
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
 }
 
 .profile_info_name:hover {
@@ -78,6 +108,7 @@
 }
 
 .profile_info_name:active {
+    filter: blur(8px);
     transform: scale(0.9);
 }
 
@@ -90,6 +121,21 @@
     user-select: none;
     transition: all 0.3s ease;
     transform-origin: left center;
+    opacity: 1;
+    animation: profileSignatureFadeIn 0.6s ease backwards;
+    animation-delay: 0.3s;
+}
+@keyframes profileSignatureFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(4px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
 }
 
 .profile_info_signature:hover {
@@ -97,9 +143,8 @@
 }
 
 .profile_info_signature:active {
-    transform: scale(1.0);
+    transform: scale(1);
 }
-
 
 .profile_social_wrapper {
     margin-top: auto;
@@ -111,6 +156,21 @@
     text-decoration: none;
     color: var(--color-text-primary);
     transition: all 0.3s ease;
+    opacity: 1;
+    animation: profileSocialItemFadeIn 0.5s ease backwards;
+}
+
+@keyframes profileSocialItemFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(4px);
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
 }
 
 .profile_social_item:not(:last-child) {
@@ -128,7 +188,7 @@
 
 .profile_background {
     position: absolute;
-    font-size: calc(1rem*20);
+    font-size: calc(1rem * 20);
     font-family: var(--font-family-mono);
     font-weight: 700;
     font-style: italic;
@@ -136,7 +196,7 @@
     opacity: 0.4;
     z-index: -1;
     user-select: none;
-    animation: backgroundAnimation 0.5s ease-in-out;
+    animation: backgroundAnimation 0.5s ease;
 }
 
 @keyframes backgroundAnimation {
@@ -201,12 +261,9 @@
         justify-content: center;
     }
 
-
     .profile_image,
     .profile_info_name,
     .profile_info_signature {
         transform-origin: center center;
     }
-
-
 }
