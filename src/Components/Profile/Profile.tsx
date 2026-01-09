@@ -58,7 +58,7 @@ const Profile = () => {
                                 target="blank"
                                 className={style.profile_social_item}
                                 style={{
-                                    animationDelay: `${Object.keys(profile.socialLinks).indexOf(key) * 0.05 + 0.6}s`
+                                    animationDelay: `${Object.keys(profile.socialLinks).indexOf(key) * 0.05 + 0.8}s`
                                 }}
                             >
                                 {socialIcons[key]}

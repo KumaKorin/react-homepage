@@ -86,8 +86,9 @@
     user-select: none;
     transform-origin: center left;
     transition: all 0.3s ease;
-    opacity: 1;
-    animation: profileNameFadeIn 0.6s ease;
+
+    animation: profileNameFadeIn 0.6s ease backwards;
+    animation-delay: 0.2s;
 }
 
 @keyframes profileNameFadeIn {
@@ -121,9 +122,9 @@
     user-select: none;
     transition: all 0.3s ease;
     transform-origin: left center;
-    opacity: 1;
+
     animation: profileSignatureFadeIn 0.6s ease backwards;
-    animation-delay: 0.3s;
+    animation-delay: 0.4s;
 }
 @keyframes profileSignatureFadeIn {
     0% {
@@ -156,8 +157,9 @@
     text-decoration: none;
     color: var(--color-text-primary);
     transition: all 0.3s ease;
+
     opacity: 1;
-    animation: profileSocialItemFadeIn 0.5s ease backwards;
+    animation: profileSocialItemFadeIn 0.6s ease backwards;
 }
 
 @keyframes profileSocialItemFadeIn {
