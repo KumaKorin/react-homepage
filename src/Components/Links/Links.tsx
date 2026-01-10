@@ -5,11 +5,19 @@ import { links } from '../../profile'
 import { useState } from 'react'
 
 const Links = () => {
+    // 等待进场动画结束
+    const animateTime = 0.8
+    const [inAnimate, setInAnimate] = useState(true)
+
+    setTimeout(() => {
+        setInAnimate(false)
+    }, animateTime * 1000)
+
     const [tipsDisplay, setTipsDisplay] = useState(false)
 
     return (
         <>
-            <div className={style.links_wrapper}>
+            <div className={style.links_wrapper} style={inAnimate ? { pointerEvents: 'none' } : {}}>
                 <div className={style.links_container}>
                     <h1
                         className={style.links_title}

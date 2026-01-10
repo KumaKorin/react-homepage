@@ -8,6 +8,14 @@ import { profile } from '../../profile'
 import { BsTwitterX } from 'react-icons/bs'
 
 const Profile = () => {
+    // 等待进场动画结束
+    const animateTime = 1.4
+    const [inAnimate, setInAnimate] = useState(true)
+
+    setTimeout(() => {
+        setInAnimate(false)
+    }, animateTime * 1000)
+
     const [nameClicked, setNameClicked] = useState(1)
     const profileName = useRef<HTMLHeadingElement | null>(null)
 
@@ -33,7 +41,7 @@ const Profile = () => {
     }
 
     return (
-        <div className={style.profile_wrapper}>
+        <div className={style.profile_wrapper} style={inAnimate ? { pointerEvents: 'none' } : {}}>
             <div className={style.profile_container}>
                 <div className={style.profile_image_wrapper}>
                     <img src={profile.image} className={style.profile_image} />
