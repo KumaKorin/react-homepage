@@ -107,6 +107,11 @@ const BlogPost = () => {
                 <h1 className={style.post_title}>
                     {status === 'Done' ? articleContent!.title : status === 'Error' ? '' : 'Now Loading ...'}
                 </h1>
+                {status === 'Done' ? (
+                    <div className={style.post_published_time} style={{ animationDelay: '100ms' }}>
+                        Published on {new Date(articleContent!.publishedTime).toLocaleDateString()}
+                    </div>
+                ) : null}
                 <section className={style.post_content} style={{ animationDelay: '200ms' }}>
                     {status === 'Done' && articleContent ? (
                         documentToReactComponents(articleContent.content, options)
