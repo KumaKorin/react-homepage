@@ -25,3 +25,6 @@ dist-ssr
 .env
 
 package-lock.json
+bun.lock
+yarn.lock
+bun.lock
