@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import Background from '../Components/Common/Background/Background'

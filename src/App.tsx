@@ -1,5 +1,5 @@
 import appRouter from './Routers/Router'
-import { RouterProvider } from 'react-router-dom'
+import { RouterProvider } from 'react-router'
 import { ThemeProvider } from './Context/themeContext'
 
 const App = () => (

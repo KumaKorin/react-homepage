@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { AiFillCalendar } from 'react-icons/ai'
 import { FaAngleRight } from 'react-icons/fa'
 import style from './BlogCard.module.css'

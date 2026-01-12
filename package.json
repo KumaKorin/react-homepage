@@ -15,19 +15,15 @@
     "@emotion/styled": "^11.14.0",
     "axios": "^1.11.0",
     "contentful": "^11.5.15",
-    "dayjs": "^1.11.13",
-    "framer-motion": "^12.10.2",
     "html-react-parser": "^5.2.3",
     "lz-string": "^1.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.5.1",
-    "styled-components": "^6.1.18"
+    "react-router": "^7.5.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
-    "@types/bun": "latest",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
