@@ -5,6 +5,20 @@ import { Document } from '@contentful/rich-text-types';
 const blogModel = import.meta.env.VITE_CONTENTFUL_BLOG_MODEL || '';
 const itemsLimit = parseInt(import.meta.env.VITE_BLOG_ITEMS_PER_PAGE) || 10;
 const i18n: boolean = import.meta.env.VITE_I18N === 'true';
+const cdnEndpointRaw =
+    import.meta.env.VITE_CONTENTFUL_CDN_ENDPOINT || import.meta.env.CONTENTFUL_CDN_ENDPOINT || '';
+
+const getCdnHost = (endpoint: string): string | undefined => {
+    if (!endpoint) return undefined;
+    if (endpoint.startsWith('http://') || endpoint.startsWith('https://')) {
+        try {
+            return new URL(endpoint).host;
+        } catch {
+            return undefined;
+        }
+    }
+    return endpoint;
+};
 
 // 修改 selectShape 类型，支持 sys.createdAt
 type selectShape = (
@@ -18,9 +32,11 @@ type selectShape = (
 )[];
 
 // 创建 Contentful 客户端
+const cdnHost = getCdnHost(cdnEndpointRaw);
 const client = createClient({
     space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
     accessToken: import.meta.env.VITE_CONTENTFUL_DELIVERY_TOKEN,
+    ...(cdnHost ? { host: cdnHost } : {}),
 });
 
 // 获取置顶文章
