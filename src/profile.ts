@@ -52,11 +52,12 @@ export const links: links[] = [
         subtitle: 'Wenuu',
         link: 'https://www.wenuu.cn/?from=korin.im',
         avatar: 'https://cravatar.com/avatar/23c51fce715e221bb371b4bd2437d8bc?s=512'
-    },
-    {
-        title: '唐辫小二',
-        subtitle: 'LARMAXHARKER',
-        link: 'https://larmaxharkerx.github.io/?from=korin.im',
-        avatar: 'https://i1.mcobj.com/imgb/u1/20260109_69606ac284bd2.jpeg'
     }
+
+    // {
+    //     title: '唐辫小二',
+    //     subtitle: 'LARMAXHARKER',
+    //     link: 'https://larmaxharkerx.github.io/?from=korin.im',
+    //     avatar: 'https://i1.mcobj.com/imgb/u1/20260109_69606ac284bd2.jpeg'
+    // }
 ]
