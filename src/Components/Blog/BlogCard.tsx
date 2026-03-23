@@ -29,7 +29,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ articleId, articleTitle, articleDes
                     to={`/blog/${articleId}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                    <h1 className={style.blog_card_title}>{articleTitle}</h1>
+                    <h3 className={style.blog_card_title}>{articleTitle}</h3>
                 </Link>
                 <p className={style.blog_card_description}>{articleDescription}</p>
                 <div className={style.blog_card_info}>
