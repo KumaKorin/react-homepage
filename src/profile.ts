@@ -46,12 +46,16 @@ export const links: links[] = [
         link: 'https://akutazehy.github.io/?from=korin.im',
         avatar: 'https://cravatar.com/avatar/54e2d9927b6a0b0bbce12bd4df8a913ae364f4de3b428e7a5cb1bddcec37ffb4?s=512'
     },
-
     {
         title: '是未来呐',
         subtitle: 'Wenuu',
         link: 'https://www.wenuu.cn/?from=korin.im',
         avatar: 'https://cravatar.com/avatar/23c51fce715e221bb371b4bd2437d8bc?s=512'
+    },
+    {
+        title: 'Smirnova Oyama',
+        link: 'https://mahiro.uk/?from=korin.im',
+        avatar: 'https://mahiro.uk/content/nekoxun.jpg'
     }
 
     // {
