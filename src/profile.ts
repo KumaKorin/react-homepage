@@ -17,7 +17,7 @@ export const profile: profile = {
     sitename: 'KumaKorin',
     names: ['KumaKorin', '熊こりん', '熊可狸', '阿狸丶A'],
     description: 'Nothing easy is worth doing.',
-    image: 'https://m1.miaomc.cn/uploads/20210623_b735dde7c665d.jpeg',
+    image: '/avatar.jpg',
     socialLinks: {
         github: 'https://github.com/KumaKorin',
         youtube: 'https://www.youtube.com/@KumaKorin',
