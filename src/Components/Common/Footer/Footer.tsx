@@ -2,6 +2,7 @@ import style from './Footer.module.css'
 import { useTheme } from '../../../Context/themeContext'
 const Footer = () => {
     const miitLicense: string | null | undefined = import.meta.env.VITE_MIIT_LICENSE
+    const miitLicenseUrl: string | null | undefined = import.meta.env.VITE_MIIT_LICENSE_URL
 
     const { theme } = useTheme()
     const currentTheme = theme
@@ -13,7 +14,6 @@ const Footer = () => {
 
     const logoUrl = currentTheme === 'dark' ? upyunLogo.dark : upyunLogo.light
 
-    // if (miitLicense) {
     return (
         <div className={style.footer_wrapper}>
             <div className={style.footer_container}>
@@ -26,10 +26,14 @@ const Footer = () => {
                     由
                     <img src={logoUrl} alt="UPYUN Logo" />
                     提供存储与加速服务
-                    <a href="https://beian.miit.gov.cn" target="_blank">
-                        {miitLicense}
-                    </a>
                 </div>
+                {miitLicense && (
+                    <div className={style.footer_miit}>
+                        <a href={`${miitLicenseUrl}`} target="_blank" rel="noopener noreferrer">
+                            {miitLicense}
+                        </a>
+                    </div>
+                )}
             </div>
         </div>
     )
