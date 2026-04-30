@@ -39,12 +39,12 @@ export const links: links[] = [
         title: '艾了个拉',
         subtitle: 'Aira',
         link: 'https://aira.cafe/?from=korin.im',
-        avatar: 'https://cravatar.com/avatar/588a9fd8fde139d73aaeb95dd19b6827?s=512'
+        avatar: 'https://aira.cafe/images/avatar.webp'
     },
     {
         title: 'Akuta Zehy',
         link: 'https://akutazehy.github.io/?from=korin.im',
-        avatar: 'https://cravatar.com/avatar/54e2d9927b6a0b0bbce12bd4df8a913ae364f4de3b428e7a5cb1bddcec37ffb4?s=512'
+        avatar: 'https://avatars.githubusercontent.com/u/42381419'
     },
     {
         title: '是未来呐',
