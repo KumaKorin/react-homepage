@@ -33,7 +33,7 @@ export const links: links[] = [
         title: '纸绫',
         subtitle: 'MoriDreamers',
         link: 'https://www.yuque.com/moridreamers?from=korin.im',
-        avatar: 'https://cravatar.com/avatar/2b826c131afe46c2166d3acf46862b35?s=512'
+        avatar: 'https://i1.mcobj.com/imgb/u1/20260605_6a22ca4f28dc4.png'
     },
     {
         title: '艾了个拉',
@@ -56,6 +56,11 @@ export const links: links[] = [
         title: 'Smirnova Oyama',
         link: 'https://mahiro.uk/?from=korin.im',
         avatar: 'https://mahiro.uk/content/nekoxun.jpg'
+    },
+    {
+        title: 'WaveYo',
+        link: 'https://www.waveyo.cn?from=korin.im',
+        avatar: 'https://www.waveyo.cn/WaveYo.jpg'
     }
 
     // {
