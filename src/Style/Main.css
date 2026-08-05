@@ -41,7 +41,7 @@
     --color-common-title: hsl(5, 51%, 67%);
 
     /* 字体变量 */
-    --font-family-main: 'PingFang SC', 'HarmonyOS Sans SC', 'MiSans', 'Microsoft YaHei', 'Arial', sans-serif;
+    --font-family-main: 'MiSans', 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', 'Arial', sans-serif;
     --font-family-mono: 'Roboto Mono', 'Microsoft YaHei', 'Arial', 'Courier New', 'Courier', monospace;
     --font-size-page-title: 58px;
     --font-size-large: 32px;

@@ -8,8 +8,7 @@ export default defineConfig({
         react(),
         webfontDownload([
             'https://fonts.loli.net/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap',
-            'https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css',
-            'https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css'
+            'https://font.assets.mcobj.com/fonts/misans/face.css'
         ])
     ]
 })
