@@ -10,6 +10,11 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+build
+.react-router
+*.db
+*.db-journal
+*.tsbuildinfo
 *.local
 
 # Editor directories and files

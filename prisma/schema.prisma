@@ -1,0 +1,105 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+}
+
+enum AuthProvider {
+    Local
+    MIAOMC_Passport
+}
+
+enum UserRole {
+    Admin
+    User
+}
+
+model User {
+    id Int @id @default(autoincrement())
+
+    avatarUrl String? @map("avatar_url")
+
+    role UserRole @default(User)
+
+    username String @unique
+    email    String @unique
+
+    password String?
+
+    authProvider      AuthProvider @default(Local) @map("auth_provider")
+    passportProfileId String?      @unique @map("passport_profile_id")
+
+    createdAt DateTime  @default(now()) @map("created_at")
+    updatedAt DateTime  @updatedAt @map("updated_at")
+    deletedAt DateTime? @map("deleted_at")
+
+    lastLogin DateTime? @map("last_login")
+
+    posts    Post[]
+    sessions Session[]
+}
+
+enum SessionProvider {
+    Local
+    MIAOMC_Passport
+}
+
+model Session {
+    session String @id
+
+    user   User @relation(fields: [userId], references: [id])
+    userId Int
+
+    sessionProvider         SessionProvider @default(Local) @map("session_provider")
+    passportIntrospectToken String?         @map("passport_introspect_token")
+
+    createdAt DateTime @default(now()) @map("created_at")
+    expiredAt DateTime @map("expired_at")
+}
+
+model Tag {
+    id Int @id @default(autoincrement())
+
+    name        String  @unique
+    description String?
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    posts Post[]
+}
+
+enum PostStatus {
+    Draft
+    UnderReview
+    Published
+    Archived
+}
+
+model Post {
+    id Int @id @default(autoincrement())
+
+    status PostStatus @default(Draft)
+
+    slug   String  @unique
+    pinned Boolean @default(false)
+
+    title   String
+    content String
+
+    createdAt DateTime  @default(now()) @map("created_at")
+    updatedAt DateTime  @updatedAt @map("updated_at")
+    deletedAt DateTime? @map("deleted_at")
+
+    user   User @relation(fields: [userId], references: [id])
+    userId Int
+
+    tags Tag[]
+}
+
+model SiteOptions {
+    key   String @id
+    value String
+}
