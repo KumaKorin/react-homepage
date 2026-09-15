@@ -61,6 +61,12 @@ export const links: links[] = [
         title: 'WaveYo',
         link: 'https://www.waveyo.cn?from=korin.im',
         avatar: 'https://www.waveyo.cn/WaveYo.jpg'
+    },
+    {
+        title: '阿蘅仔',
+        subtitle: 'cocoa-c',
+        link: 'https://www.cocoac.social',
+        avatar: 'https://www.cocoac.social/images/avatar.webp'
     }
 
     // {
